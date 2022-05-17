@@ -1,0 +1,10 @@
+document.writeln("Richo \n vernando");
+document.writeln("</br>");
+document.writeln("Nama " + "Richo");
+document.writeln("</br>");
+document.writeln("<textarea cols='100' rows='10'>");
+document.write("Eko \nkurniawan\n");
+document.write("\\Hom\\Khannedy\n");
+document.write("\"Programmer zaman now\"\n");
+document.write('\'Belajar javascript\'');
+document.writeln("</textarea>");
