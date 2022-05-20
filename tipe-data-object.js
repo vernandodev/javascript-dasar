@@ -14,4 +14,8 @@ const orang = {
     alamat : "Indonesia",
     umur: 30
 };
-console.table(orang);
+
+// Mengakses property object
+console.log(`Nama : ${orang["nama lengkap"]}`);
+console.log(`Alamat : ${orang.alamat}`);
+console.log(`Umur : ${orang.umur}`);
