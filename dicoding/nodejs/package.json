@@ -1,0 +1,25 @@
+{
+  "name": "belajar-node-js",
+  "version": "1.0.0",
+  "description": "belajar dasar node js di Dicoding",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "setup",
+    "environment",
+    "module",
+    "penanganan",
+    "error",
+    "concurrency",
+    "node",
+    "package",
+    "manager",
+    "javascript",
+    "testing"
+  ],
+  "author": "vernandodev",
+  "license": "ISC"
+}
