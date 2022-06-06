@@ -51,26 +51,38 @@ class ValidationError{
     }
 }
 // TODO 2
-const validateNumberInput(arg1, arg2, arg3) => {
-    if(arg1 != Number){
-        console.log('Argumen pertama harus number');
-    }else if(arg2 != Number){
-        console.log('Argumen kedua harus number')
-    }else
+function validateNumberInput(a, b, c){
+    try{
+        if(typeof a !== 'number'){
+            throw new ValidationError("Argumen pertama harus number");
+        }
+        if(typeof b !== 'number'){
+            throw new ValidationError("Argumen kedua harus number");
+        }
+        if(typeof c !== 'number'){
+            throw new ValidationError("Argumen ketiga harus number");
+        }
+    }catch(e){
+        return `${e.message}`;
+    }
 }
-
 const detectTriangle = (a, b, c) => {
     // TODO 3
-
-    if (a === b && b === c) {
-      return 'Segitiga sama sisi';
+    try{
+        const cek = validateNumberInput(a,b,c);
+        if(cek === undefined){
+            if(a === b && b === c) {
+                return 'segitiga sama sisi'
+            }
+            if (a === b || a === c || b === c) {
+                return 'Segitiga sama kaki';
+            }
+            return 'Segitiga sembarang';
+        }
+    }catch(e){
+        const cek2 = validateNumberInput(a,b,c);
+        
     }
-
-    if (a === b || a === c || b === c) {
-      return 'Segitiga sama kaki';
-    }
-
-    return 'Segitiga sembarang';
   };
 
   /**
