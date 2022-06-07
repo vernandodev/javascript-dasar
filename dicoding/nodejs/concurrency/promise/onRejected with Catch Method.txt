@@ -1,0 +1,11 @@
+checkStock()
+  .then(handleSuccess)
+  .then(null, handleFailure);
+
+  Namun untuk menetapkan onRejected handler, kita perlu memberikan nilai null pada parameter pertama method .then(). Hal ini sedikit merepotkan bukan? Solusinya kita dapat menggunakan method lain, yakni .catch().
+
+Method .catch() mirip seperti .then(). Namun, method ini hanya menerima satu parameter function yang digunakan untuk rejected handler. Method catch() ini akan terpanggil ketika objek promise memiliki kondisi onRejected. Berikut contoh penggunaan method .catch():
+
+checkStock()
+  .then(handleSuccess)
+  .catch(handleFailure);
