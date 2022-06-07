@@ -42,50 +42,43 @@
  *   - bila block catch terpanggil, kembalikan fungsi detectTriangle dengan pesan error yang dibawa fungsi validateNumberInput.
  */
 
-
 // TODO 1
-class ValidationError{
-    constructor(message){
+class ValidationError extends Error {
+    constructor(message) {
         super(message);
         this.name = "ValidationError";
     }
-}
-// TODO 2
-function validateNumberInput(a, b, c){
-    try{
-        if(typeof a !== 'number'){
-            throw new ValidationError("Argumen pertama harus number");
-        }
-        if(typeof b !== 'number'){
-            throw new ValidationError("Argumen kedua harus number");
-        }
-        if(typeof c !== 'number'){
-            throw new ValidationError("Argumen ketiga harus number");
-        }
-    }catch(e){
-        return `${e.message}`;
-    }
-}
-const detectTriangle = (a, b, c) => {
-    // TODO 3
-    try{
-        const cek = validateNumberInput(a,b,c);
-        if(cek === undefined){
-            if(a === b && b === c) {
-                return 'segitiga sama sisi'
-            }
-            if (a === b || a === c || b === c) {
-                return 'Segitiga sama kaki';
-            }
-            return 'Segitiga sembarang';
-        }
-    }catch(e){
-        const cek2 = validateNumberInput(a,b,c);
-        
-    }
-  };
+ }
 
-  /**
-   * Jangan hapus kode di bawah ini
-   */
-  module.exports = { ValidationError, validateNumberInput, detectTriangle };
+ // TODO 2
+
+ function validateNumberInput(a,b,c){
+    if(typeof(a) !== "number"){
+      throw new ValidationError("Argumen pertama harus number")
+    }else if(typeof(b) !== "number"){
+      throw new ValidationError("Argumen kedua harus number")
+    }else if(typeof(c) !== "number"){
+      throw new ValidationError("Argumen ketiga harus number")
+    }
+  }
+  // TODO 3
+
+  const detectTriangle = (a, b, c) => {
+    try{
+      validateNumberInput(a,b,c)
+
+      if (a === b && b === c ) {
+        return 'Segitiga sama sisi';
+      }
+      if (a === b || a === c || b === c) {
+        return 'Segitiga sama kaki';
+      }
+
+      return 'Segitiga sembarang';
+    }catch(error){
+      if (error instanceof ValidationError){
+        return `${error.message}`;
+      }
+    }
+  }
+
