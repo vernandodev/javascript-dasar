@@ -1,0 +1,17 @@
+{
+  "name": "latihantesting",
+  "version": "1.0.0",
+  "description": "latihan testing dengan jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "jest"
+  ],
+  "author": "vernandodev",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
